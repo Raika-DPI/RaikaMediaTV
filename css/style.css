@@ -1,0 +1,1184 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+body {
+    margin: 0;
+    background-color: #06101F;
+    padding: 0;
+    position: relative;
+}
+
+body > main {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5.3125em;
+}
+
+.video-container {
+    height: calc(91.5vh);
+    display: flex;
+    border-image: url('../imgs/dash.png') 3 / 3px repeat;
+    padding: 1px;
+}
+
+.video-container .chat {
+    width: 350px;
+    height: 100%;
+    background-color: #F2EFCE;
+}
+
+.video-container #swimelodeon {
+    height: 100%;
+    width: 100%;
+}
+
+.video-container #swimelodeon video {
+    width: 100%;
+    cursor: pointer;
+    object-fit: contain !important;
+}
+
+.vjs-button:hover {
+    background-color: #F2EFCE;
+    color: #005a5a;
+    text-shadow: none !important;
+}
+
+.vjs-slider-horizontal .vjs-volume-level::before {
+    line-height: 0.222em !important;
+}
+
+.video-js .vjs-volume-level::before {
+    font-size: 1.5em !important;
+}
+
+.vjs-button:hover .vjs-control-text {
+    color: #005a5a !important;
+    text-shadow: none !important;
+}
+
+.vjs-button > .vjs-icon-placeholder::before {
+    font-size: 2.5em !important;
+    line-height: initial !important;
+}
+
+.video-js {
+    color: #F2EFCE !important;
+}
+
+.video-container .video-js .vjs-big-play-button,
+.video-container .video-js .vjs-loading-spinner,
+.video-container .vjs-no-js {
+    top: calc(50% - 15px) !important;
+}
+
+.video-container.chat-active .vjs-big-play-button,
+.video-container.chat-active .video-js .vjs-loading-spinner,
+.video-container.chat-active .vjs-no-js {
+    left: calc(50% - 150px) !important;
+}
+
+.video-container.chat-active .video-js .vjs-control-bar {
+    width: calc(100% - 350px);
+}
+
+.video-container.chat-active .vjs-error .vjs-error-display::before {
+    padding-right: 350px;
+}
+
+.video-container.chat-active #swimelodeon video,
+.video-container.chat-active #swimelodeon div.vjs-poster {
+    padding-right: 350px
+}
+
+.video-container.chat-active .vjs-modal-dialog-content {
+    padding-right: 324px
+}
+
+.video-container.chat-active .guide-container {
+    padding-right: 350px
+}
+
+.header {
+    margin: 0.25em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-height: 73px;
+}
+
+.header .left,
+.header .right {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+.header .left {
+    margin-right: 1em;
+}
+
+.header .right {
+    margin-left: 1em;
+}
+
+.header .left img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: 73px;
+}
+
+.header .version {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 1.125em;
+    letter-spacing: 0.1em;
+    color: #F2EFCE;
+    font-style: italic;
+    margin-left: 0.8125em;
+    text-transform: uppercase;
+}
+
+.header .schedule {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+.header .schedule {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 1.125em;
+    letter-spacing: 0.1em;
+    color: #F2EFCE;
+    font-style: italic;
+    text-transform: uppercase;
+    text-align: right;
+}
+
+.header .schedule {
+    white-space: nowrap;
+}
+
+.header .schedule .schedule-cards {
+    display: flex;
+    flex-direction: row;
+    column-gap: 0.25em;
+    align-items: flex-end;
+}
+
+.header .schedule .schedule-cards .schedule-card {
+    height: 73px;
+    width: 73px;
+    transition: all 0.5s ease-in-out;
+    padding: 1px;
+    position: relative;
+    max-width: 73px;
+    max-height: 73px;
+}
+
+.header .schedule .schedule-cards .schedule-card img {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    object-fit: cover;
+    transition: all 0.5s ease-in-out;
+}
+
+.header .schedule .schedule-cards .schedule-card span {
+    opacity: 0;
+    position: absolute;
+    transition: all 0.5s ease-in-out;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0;
+    letter-spacing: 0.1em;
+    color: #F2EFCE;
+    font-style: italic;
+    text-transform: uppercase;
+    text-align: right;
+    top: 0;
+    z-index: -1;
+}
+
+.header .schedule .schedule-cards .schedule-card:hover span {
+    opacity: 1;
+    top: -1.5em;
+    font-size: 1.125em;
+}
+
+.header .schedule .schedule-cards .schedule-card:hover img {
+    filter: brightness(90%);
+}
+
+.header .schedule .schedule-cards .schedule-card.one {
+    width: calc(100px * 0.73);
+    border: 1px solid #F2EFCE;
+}
+
+.header .schedule .schedule-cards .schedule-card.one img {
+    filter: brightness(90%);
+}
+
+.header .schedule .schedule-cards .schedule-card.two {
+    width: calc(50px * 0.73);
+    border-image: url('../imgs/dash.png') 3 / 3px repeat;
+}
+
+.header .schedule .schedule-cards .schedule-card.two img {
+    filter: brightness(80%);
+}
+
+.header .schedule .schedule-cards .schedule-card.three {
+    width: calc(50px * 0.73);
+    border-image: url('../imgs/dash.png') 3 / 3px repeat;
+}
+
+.header .schedule .schedule-cards .schedule-card.three img {
+    filter: brightness(50%);
+}
+
+.header .schedule .schedule-cards .now-playing,
+.header .schedule .schedule-cards .next-playing,
+.header .schedule .schedule-cards .after-playing {
+    transition: all 0.5s ease-in-out;
+    margin: 0 0.25em;
+}
+
+.header .schedule .schedule-cards .now-playing {
+    margin-left: 0;
+}
+
+.header .schedule .schedule-cards .next-playing,
+.header .schedule .schedule-cards .after-playing {
+    font-size: 0;
+    letter-spacing: 0;
+    opacity: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+.header .schedule .schedule-cards.two .now-playing,
+.header .schedule .schedule-cards.three .now-playing {
+    font-size: 0;
+    letter-spacing: 0;
+    opacity: 0;
+    overflow: hidden;
+}
+
+.header .schedule .schedule-cards.two .next-playing {
+    display: block !important;
+    margin: 0 0.25em;
+    font-size: 1.125em;
+    opacity: 1;
+    margin-left: 1em;
+}
+
+.header .schedule .schedule-cards.three .after-playing {
+    display: block !important;
+    margin: 0 0.25em;
+    font-size: 1.125em;
+    opacity: 1;
+    margin-left: 1em;
+}
+
+.header .schedule .schedule-cards.two .schedule-card.one {
+    width: calc(37.5px * 0.73);
+    border: none;
+    border-image: url('../imgs/dash.png') 3 / 3px repeat;
+}
+.header .schedule .schedule-cards.two .schedule-card.one img {
+    filter: brightness(80%);
+}
+
+.header .schedule .schedule-cards.two .schedule-card.two {
+    width: calc(100px * 0.73);
+    border-image: none;
+    border: 1px solid #F2EFCE;
+}
+.header .schedule .schedule-cards.two .schedule-card.two img {
+    filter: brightness(90%);
+}
+
+.header .schedule .schedule-cards.two .schedule-card.three {
+    width: calc(37.5px * 0.73);
+    border: none;
+    border-image: url('../imgs/dash.png') 3 / 3px repeat;
+}
+.header .schedule .schedule-cards.two .schedule-card.three img {
+    filter: brightness(80%);
+}
+
+.header .schedule .schedule-cards.three .schedule-card.one {
+    width: calc(25px * 0.73);
+    border: none;
+    border-image: url('../imgs/dash.png') 3 / 3px repeat;
+}
+.header .schedule .schedule-cards.three .schedule-card.one img {
+    filter: brightness(50%);
+}
+
+.header .schedule .schedule-cards.three .schedule-card.two {
+    width: calc(50px * 0.73);
+    border: none;
+    border-image: url('../imgs/dash.png') 3 / 3px repeat;
+}
+.header .schedule .schedule-cards.three .schedule-card.two img {
+    filter: brightness(80%);
+}
+
+.header .schedule .schedule-cards.three .schedule-card.three {
+    width: calc(100px * 0.73);
+    border-image: none;
+    border: 1px solid #F2EFCE;
+}
+.header .schedule .schedule-cards.three .schedule-card.three img {
+    filter: brightness(90%);
+}
+
+video {
+    max-width: 100%;
+}
+
+.video-js .vjs-volume-panel {
+    min-width: fit-content !important;
+    transition: none !important;
+}
+
+.video-js .vjs-volume-panel .vjs-volume-control {
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: 5em !important;
+    height: 1px !important;
+    margin-left: 0px !important;
+}
+
+.video-js .vjs-control-bar {
+    background-color: black !important;
+    z-index: 2;
+}
+
+.vjs-paused .vjs-control-bar {
+    display: flex !important;
+}
+
+.vjs-no-js {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.vjs-paused .vjs-big-play-button {
+    display: flex !important;
+    width: 100px !important;
+    height: 100px !important;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50% !important;
+    border: none !important;
+    transform: translateY(-25px);
+    background-color: black !important;
+}
+
+.vjs-paused .vjs-big-play-button .vjs-icon-placeholder {
+    position: relative !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.vjs-paused .vjs-big-play-button .vjs-icon-placeholder::before {
+    position: absolute !important;
+    width: 0;
+    height: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+}
+
+.vjs-paused .vjs-big-play-button:hover {
+    background-color: #F2EFCE !important;
+}
+
+.vjs-paused .vjs-big-play-button:hover .vjs-icon-placeholder {
+    color: #005a5a;
+}
+
+.vjs-time-control,
+.vjs-progress-control {
+    display: none !important;
+}
+
+.video-js .vjs-control-bar .vjs-live-control {
+    max-width: min-content !important;
+    display: none !important;
+}
+
+.guide-button.component {
+    font-weight: 600;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 1.5em;
+    letter-spacing: 0.1em;
+    color: #F2EFCE;
+    text-transform: uppercase;
+    position: absolute;
+    top: 1px;
+    right: 0;
+    cursor: pointer;
+    padding: 0.5em 1em;
+    z-index: 1;
+    transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
+}
+
+.guide-button:hover {
+    background-color: #F2EFCE;
+    color: #005a5a;
+}
+
+.video-container.chat-active .guide-button.component {
+    margin-right: 350px;
+}
+
+.video-container.guide-active .component {
+    background-color: #F2EFCE;
+    color: #005a5a;
+}
+
+/*
+.vjs-has-started.vjs-user-inactive.vjs-playing .guide-button {
+    opacity: 0;
+    visibility: hidden;
+}
+*/
+
+/*
+.vjs-user-active .guide-button, 
+.vjs-paused .guide-button {
+    opacity: 1;
+    visibility: visible;
+}
+*/
+
+.video-js .vjs-control-bar button.guide-button,
+.video-js .vjs-control-bar button.chat-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    width: auto;
+    min-width: max-content;
+}
+
+.video-js .vjs-control-bar button.chat-button {
+    margin-right: auto;
+}
+
+.video-js .vjs-control-bar button.guide-button .vjs-control-text,
+.video-js .vjs-control-bar button.chat-button .vjs-control-text {
+    overflow: visible;
+    clip: auto;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 1.5em;
+    letter-spacing: 0.1em;
+    color: #F2EFCE;
+    text-transform: uppercase;
+    width: max-content;
+    position: relative;
+    padding: 0 1em;
+}
+
+.video-js .vjs-control-bar button.guide-button .vjs-icon-placeholder,
+.video-js .vjs-control-bar button.chat-button .vjs-icon-placeholder {
+    display: none;
+}
+
+.vjs-live .vjs-progress-control {
+    display: none !important;
+}
+
+.video-container .chat-container {
+    position: relative;
+    background-color: #F2EFCE;
+    height: 100%;
+    width: 350px;
+    min-width: 350px;
+    z-index: 2;
+    margin-left: auto;
+    overflow: hidden;
+}
+
+.chat-container iframe {
+    transform: translateY(-4px);
+    position: relative;
+    left: -4px;
+    width: calc(100% + 8px);
+    height: calc(100% + 4px);
+}
+
+/*
+.vjs-has-started.vjs-user-inactive.vjs-playing .vjs-control-bar {
+    opacity: 1 !important;
+}
+*/
+
+.video-container .guide-container {
+    display: none;
+    width: 100%;
+    top: 0px !important;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+    overflow: hidden;
+    background: rgba(0,0,0,0.95);
+}
+
+.guide-container .guide-schedule {
+    display: flex;
+    flex-direction: column;
+    max-height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.guide-container .guide-schedule .guide-schedule-filters {
+    display: flex;
+    padding: 2em;
+    column-gap: 2em;
+    row-gap: 2em;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.guide-container .guide-schedule .guide-schedule-filters .guide-schedule-filter {
+    cursor: pointer;
+    color: #F2EFCE;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 1.5em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 800;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+}
+
+.guide-container .guide-schedule .guide-schedule-filters .guide-schedule-filter:not(.active) {
+    border-image: url('../imgs/dash.png') 3 / 3px repeat;
+}
+
+.guide-container .guide-schedule .guide-schedule-filters .guide-schedule-filter:hover {
+    color: #005a5a;
+    background-color: #F2EFCE;
+}
+
+.guide-container .guide-schedule .guide-schedule-filters .guide-schedule-filter.active {
+    color: #005a5a;
+    background-color: #F2EFCE;
+}
+
+.guide-container .guide-schedule .guide-schedule-filters .guide-schedule-filter span {
+    display: flex;
+    height: 100%;
+    padding: 1em 2em;
+    justify-content: center;
+}
+
+.guide-container .guide-schedule .programmes {
+    display: flex;
+    width: 100%;
+    padding: 2em;
+    padding-top: 0;
+}
+
+.guide-container .guide-schedule .programmes .programmes-container {
+    width: 100%;
+}
+
+.guide-container .guide-schedule .programmes .programmes-container table {
+    width: 100% !important;
+}
+
+.guide-container .guide-schedule .programmes .programmes-container table {
+    color: #F2EFCE;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 1.5em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 400;
+    border-collapse: collapse;
+}
+
+.guide-container .guide-schedule .programmes .programmes-container table thead tr th {
+    text-align: left;
+    padding: 1em;
+}
+
+.guide-container .guide-schedule .programmes .programmes-container table tbody tr {
+    cursor: pointer;
+    border-bottom: 1px solid rgba(242, 239, 206, 0.25);
+}
+
+.guide-container .guide-schedule .programmes .programmes-container table tbody tr.child td {
+    padding-left: 2em;
+}
+
+.guide-container .guide-schedule .programmes .programmes-container table tbody tr.child ul {
+    list-style: square;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1em;
+}
+
+.guide-container .guide-schedule .programmes .programmes-container table tbody tr:first-of-type {
+    border-top: 1px solid rgba(242, 239, 206, 0.25);
+}
+
+.guide-container .guide-schedule .programmes .programmes-container table tbody tr:hover {
+    background-color: #F2EFCE;
+    color: #005a5a;
+}
+
+.guide-container .guide-schedule .programmes .programmes-container table tbody tr:not(.child):hover td:first-of-type span {
+    filter: invert(1);
+}
+
+.guide-container .guide-schedule .programmes .programmes-container table tbody tr.active {
+    background-color: #F2EFCE;
+    color: #005a5a;
+}
+
+.guide-container .guide-schedule .programmes .programmes-container table tbody tr.active + .child {
+    background-color: #F2EFCE;
+    color: #005a5a;
+}
+
+.guide-container .guide-schedule .programmes .programmes-container table tbody tr.sub-menu {
+    width: 100%;
+    position: relative;
+    background-color: #F2EFCE;
+    color: #005a5a;
+}
+
+.guide-container .guide-schedule .programmes .programmes-container table tbody tr.sub-menu td img {
+    max-width: 100%;
+    float: left;
+}
+
+.guide-container .guide-schedule .programmes .programmes-container table tbody tr td {
+    padding: 1em;
+}
+
+.guide-container .guide-schedule .programmes .programmes-container table tbody tr:not(.child) td:first-of-type span {
+    color: #FF6700;
+}
+
+.guide-container .guide-schedule .programmes .programmes-container table tbody tr.active td:first-of-type span {
+    filter: invert(1);
+}
+
+.guide-container .guide-schedule .programmes .programmes-container table tbody tr td[data-label="Start Time"],
+.guide-container .guide-schedule .programmes .programmes-container table thead tr th[data-label="Start Time"] {
+    white-space: nowrap;
+}
+
+.video-container .guide-container .guide {
+    overflow-x: hidden;
+    overflow-y: hidden;
+    height: fit-content;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 1.125em;
+    letter-spacing: 0.1em;
+    color: #F2EFCE;
+    font-style: italic;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+.video-container .guide-container .guide .guide-header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.video-container .guide-container .guide .guide-header .guide-header-slot {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    max-width: 300px !important;
+    position: relative;
+    background-color: black;
+    padding: 1em;
+    border-bottom: 1px solid #F2EFCE;
+}
+
+.video-container .guide-container .guide .guide-header .guide-header-slot:not(:first-of-type) {
+    min-width: 300px !important;
+}
+
+.video-container .guide-container .guide .guide-header .guide-header-slot::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    border-right: 1px solid #F2EFCE;
+    width: 1px;
+    height: 100%;
+}
+
+.video-container .guide-container .guide .guide-programmes {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.video-container .guide-container .guide .guide-programmes .guide-programme {
+    padding: 1em;
+    border-right: 1px solid white;
+    background-color: black;
+    cursor: pointer;
+}
+
+.guide-container .current-guide-programme {
+    display: flex;
+    width: min-content;
+    height: 100%;
+    flex-direction: column;
+    background: black;
+    padding: 1em;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 1.125em;
+    letter-spacing: 0.1em;
+    color: #F2EFCE;
+    font-style: italic;
+    text-transform: uppercase;
+    font-weight: 800;
+    margin-left: auto;
+}
+
+.guide-container .current-guide-programme .guide-programme-info {
+    padding: 1em;
+}
+
+.guide-container .current-guide-programme .guide-programme-info .wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 1em;
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 3em;
+    align-items: center;
+    margin-left: 2em;
+    margin-right: 2em;
+}
+
+.footer .left ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    row-gap: 1em;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer .left ul li a {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 1.125em;
+    letter-spacing: 0.1em;
+    font-style: italic;
+    text-decoration: none;
+    color: #F2EFCE;
+    text-transform: uppercase;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.footer .left ul li a::before {
+    position: relative;
+    content: '';
+    width: 8px;
+    height: 8px;
+    min-width: 8px;
+    min-height: 8px;
+    background-color: #F2EFCE;
+    border-radius: 50%;
+    display: block;
+    margin-right: 5em;
+}
+
+.footer .left ul li a:hover {
+    color: #959eb1;
+}
+
+.footer .left ul li a:hover::before {
+    margin-left: 4em;
+    margin-right: 1em;
+    transition: all 0.25s ease-in-out;
+    background-color: #959eb1;
+}
+
+.footer .right {
+    font-family: 'IBM Plex Mono', monospace;
+    text-transform: uppercase;
+    color: #F2EFCE;
+    letter-spacing: 0.1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    text-align: right;
+    line-height: 2.8125em;
+}
+
+.footer .right p {
+    font-size: 1.125em;
+    text-align: right;
+    margin: 0;
+}
+
+.footer .right h1 {
+    font-size: 1em;
+    font-weight: 100;
+    font-style: italic;
+    margin: 0;
+}
+
+p.friday {
+    position: absolute;
+    bottom: 0;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.5625em;
+    text-transform: uppercase;
+    color: #F2EFCE;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    margin: 0;
+    font-style: italic;
+}
+
+@media only screen and (max-width: 1600px) {
+    .footer .right h1 {
+        max-width: 420px;
+    }
+
+    .footer .right {
+        line-height: initial;
+        row-gap: 1.125em;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+
+    .header .right {
+        margin-left: auto;
+    }
+
+    .video-container.chat-active .vjs-big-play-button,
+    .video-container .video-js .vjs-loading-spinner,
+    .video-container .vjs-no-js {
+        left: calc(50% - 150px) !important;
+    }
+
+    .footer .left ul li a::before {
+        margin-right: 2em;
+    }
+
+    .footer .left ul li a:hover::before {
+        margin-right: 1em;
+        margin-left: 1em;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .header .schedule {
+        font-size: 1em !important;
+    }
+
+    .header .schedule .schedule-cards.two .next-playing {
+        font-size: 1em;
+    }
+    
+    .header .schedule .schedule-cards.three .after-playing {
+        display: block !important;
+        margin: 0 0.25em;
+        font-size: 1.125em;
+        opacity: 1;
+    }
+
+    .header .left .version {
+        display: none;
+    }
+
+    .header .left img.mobile {
+        display: block !important;
+    }
+
+    .header .left img:not(.mobile) {
+        display: none;
+    }
+
+    /*
+    .header .left img {
+        margin-right: 0.8125em
+    }
+    */
+}
+
+@media only screen and (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        max-height: unset;
+    }
+
+    .header .left {
+        margin-bottom: 0.5em;
+        margin-right: 0;
+    }
+
+    .header .left img {
+        margin-right: 0;
+        max-height: unset;
+    }
+
+    .video-container {
+        flex-direction: column;
+    }
+
+    .video-container .chat-container {
+        width: 100%;
+        height: 50%;
+        min-width: unset;
+        top: 50%;
+    }
+
+    .video-container.chat-active .video-js .vjs-control-bar {
+        width: 100% !important;
+        top: 50%;
+    }
+
+    .video-container.chat-active #swimelodeon video,
+    .video-container.chat-active .guide-container,
+    .video-container #swimelodeon div.vjs-poster,
+    .video-container.chat-active .vjs-error .vjs-error-display::before {
+        padding-right: 0;
+    }
+
+    .video-container.chat-active .guide-button.component {
+        margin-right: 0;
+    }
+
+    .video-container.chat-active .guide-container {
+        height: 50%;
+    }
+
+    .video-container.chat-active #swimelodeon video,
+    .video-container.chat-active #swimelodeon div.vjs-poster,
+    .video-container.chat-active .video-js .vjs-modal-dialog {
+        padding-bottom: 0;
+        height: 50%;
+    }
+
+    .video-container.chat-active .vjs-modal-dialog-content {
+        padding-right: 24px;
+    }
+
+    .footer {
+        flex-direction: column-reverse;
+    }
+
+    .footer .left,
+    .footer .right {
+        width: 100%;
+    }
+
+    .footer .right {
+        align-items: flex-start;
+        text-align: center;
+        margin-bottom: 2em;
+    }
+
+    .footer .right p {
+        text-align: center;
+        width: 100%;
+    }
+
+    .footer .right h1 {
+        max-width: 100%;
+    }
+
+    .video-container .vjs-big-play-button,
+    .video-container .video-js .vjs-loading-spinner,
+    .video-container .vjs-no-js {
+        left: 50% !important;
+    }
+
+    .video-container.chat-active .vjs-big-play-button,
+    .video-container.chat-active .video-js .vjs-loading-spinner,
+    .video-container.chat-active .vjs-no-js {
+        left: 50% !important;
+    }
+
+    .video-container.chat-active .vjs-big-play-button,
+    .video-container.chat-active .video-js .vjs-loading-spinner,
+    .video-container.chat-active .vjs-no-js {
+        top: calc(50% / 2) !important;
+    }
+
+    .header .schedule .now-playing .playing, .header .schedule .title {
+        white-space:normal;
+    }
+
+    body {
+        padding: 1em;
+    }
+
+    .header {
+        margin-bottom: 2em;
+    }
+
+    .header .left {
+        margin-bottom: 3em;
+    }
+
+
+
+    .header .right {
+        margin-left: 0;
+    }
+
+    .header .right .schedule .now-playing {
+        margin-right: 0;
+        margin-bottom: 0.5em;
+        text-align: left;
+    }
+
+    .header .right .schedule {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .header .right .schedule-cards {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .header .right .schedule-cards .schedule-card {
+        width: 100% !important;
+    }
+
+    .header .schedule .schedule-cards .schedule-card {
+        max-width: unset;
+    }
+
+    .header .right .schedule-cards .schedule-card.one {
+        margin-bottom: 2.875em;
+        border: 1px solid #F2EFCE !important;
+    }
+
+    .header .right .schedule-cards .schedule-card.one::after {
+        content: '//coming up';
+        position: relative;
+        display: block;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 1em;
+        letter-spacing: 0.1em;
+        color: #F2EFCE;
+        font-style: italic;
+        text-transform: uppercase;
+        margin-top: 1em;
+        text-align: left;
+    }
+
+    .header .right .schedule-cards .schedule-card.two {
+        height: 50px;
+        margin-bottom: 0.5em;
+    }   
+
+    .header .right .schedule-cards .schedule-card.three {
+        height: 50px;
+    }
+
+    .header .schedule .schedule-cards.two .schedule-card.two {
+        height: 100px;
+    }
+
+    .header .schedule .schedule-cards.three .schedule-card.two {
+        height: 50px;
+    }
+
+    .header .schedule .schedule-cards.three .schedule-card.three {
+        height: 100px;
+    }
+
+    .video-container {
+        width: calc(100% + 2em);
+        transform: translateX(-1em)
+    }
+
+    .header .schedule .title {
+        white-space: break-spaces;
+    }
+
+    .header .schedule .now-playing {
+        margin-right: 0.5em;
+    }
+
+    .header .schedule .now-playing,
+    .header .schedule .next-playing,
+    .header .schedule .after-playing {
+        width: 100%;
+        text-align: left;
+    }
+
+    .header .schedule .schedule-cards.two .now-playing,
+    .header .schedule .schedule-cards.three .now-playing {
+        font-size: 1em;
+        letter-spacing: 0.1em;
+        opacity: 1;
+        overflow: hidden;
+    }
+
+    .header .schedule .schedule-cards.two .next-playing {
+        font-size: 1em !important;
+        text-align: left;
+        margin-bottom: 0.5em;
+    }
+    
+    .header .schedule .schedule-cards.three .after-playing {
+        font-size: 1em !important;
+        text-align: left;
+        margin-top: 0.5em
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .footer {
+        margin-top: 2em;
+    }
+}
+
+@media only screen and (max-width: 360px) {
+    .guide-container .guide-schedule .programmes .programmes-container table tbody tr.sub-menu {
+        display: flex;
+        flex-direction: column;
+    }
+}
