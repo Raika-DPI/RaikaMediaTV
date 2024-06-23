@@ -423,28 +423,6 @@ player.play();
 const Button = videojs.getComponent('Button');
 const Component = videojs.getComponent('Component');
 
-class ChatMenuButton extends Button {
-    constructor(player, options) {
-        super(player, options);
-        this.controlText('HIDE CHAT');
-        this.addClass('chat-button');
-    }
-}
-videojs.registerComponent('ChatMenuButton', ChatMenuButton);
-player.controlBar.addChild('ChatMenuButton', {  
-    clickHandler: function () {
-        $('.video-container .chat-container').toggle();
-        $('.video-container').toggleClass('chat-active');
-        if($('.video-container').hasClass('chat-active')) {
-            $('.chat-button span').text('HIDE CHAT');
-        } else {
-            $('.chat-button span').text('SHOW CHAT');
-        }
-    }
-}, 10);
-
-$('button.vjs-button.chat-button').click();
-
 class GuideMenuButton extends Button {
     constructor(player, options) {
         super(player, options);
