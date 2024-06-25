@@ -49,7 +49,7 @@ $(document).ready(async function() {
 //fetch the xml tv guide
 function getTVGuide() {   
     return $.get({
-        url: 'https://swimelodeontvguide.duckdns.org/iptv/xmltv.xml',
+        url: 'https://tvsat.raikamedia.cc/iptv/xmltv.xml',
     });
 }
 
