@@ -32,12 +32,12 @@ body > main {
     background-color: #F2EFCE;
 }
 
-.video-container #swimelodeon {
+.video-container #raikamedia {
     height: 100%;
     width: 100%;
 }
 
-.video-container #swimelodeon video {
+.video-container #raikamedia video {
     width: 100%;
     cursor: pointer;
     object-fit: contain !important;
@@ -91,8 +91,8 @@ body > main {
     padding-right: 350px;
 }
 
-.video-container.chat-active #swimelodeon video,
-.video-container.chat-active #swimelodeon div.vjs-poster {
+.video-container.chat-active #raikamedia video,
+.video-container.chat-active #raikamedia div.vjs-poster {
     padding-right: 350px
 }
 
@@ -974,9 +974,9 @@ p.friday {
         top: 50%;
     }
 
-    .video-container.chat-active #swimelodeon video,
+    .video-container.chat-active #raikamedia video,
     .video-container.chat-active .guide-container,
-    .video-container #swimelodeon div.vjs-poster,
+    .video-container #raikamedia div.vjs-poster,
     .video-container.chat-active .vjs-error .vjs-error-display::before {
         padding-right: 0;
     }
@@ -989,8 +989,8 @@ p.friday {
         height: 50%;
     }
 
-    .video-container.chat-active #swimelodeon video,
-    .video-container.chat-active #swimelodeon div.vjs-poster,
+    .video-container.chat-active #raikamedia video,
+    .video-container.chat-active #raikamedia div.vjs-poster,
     .video-container.chat-active .video-js .vjs-modal-dialog {
         padding-bottom: 0;
         height: 50%;
