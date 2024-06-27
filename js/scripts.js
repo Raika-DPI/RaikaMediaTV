@@ -408,7 +408,7 @@ function parseCustomDate (s) {
 }
 
 /* Start - videojs customization */
-var player = new videojs('swimelodeon', {
+var player = new videojs('raikamedia', {
     html5: {
         nativeAudioTracks: false,
         nativeVideoTracks: false,
