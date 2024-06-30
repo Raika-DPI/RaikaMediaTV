@@ -77,14 +77,23 @@
             <source src="https://chan.raikamedia.cc/devices/ANY/channels/9000/hls/stream.m3u8?abitrate=192&abr=false&achannels=2&acodec=ac3&bitrate=1500&deinterlacer=linear&indexed=true&resolution=480&session=MTcxOTU5MjEzM3xEWDhFQVFMX2dBQUJFQUVRQUFCU180QUFBZ1p6ZEhKcGJtY01DZ0FJZFhObGNtNWhiV1VHYzNSeWFXNW5EQWNBQlZKaGFXdGhCbk4wY21sdVp3d0xBQWxqYkdsbGJuUXRhV1FHYzNSeWFXNW5EQTRBREdFMVl6STROR1EyWkdRME53PT18uRqMI7ZOwibh9mkxdAn7i77-HeuoAZyzll4t3e1alPk%3D&ssize=1&vcodec=h264" type="application/x-mpegURL">
             </video-js>
         </div> 
-  <div class="footer">
-           <div class="right">
+        <div class="footer">
+            <div class="right">
                 <p>//?//?//if people can get past, can they also get... future?/</p>
                 <h1>watch your favorite old-school cartoons, anime, tv shows, & movies 'always live, as long as this server's running'</h1>
                 <h6>*This is a nonprofit, experimental project*</h6>
             </div>
         </div>
     </main>
+    <p class="friday">
+        <script>
+            const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+            let day = weekday[new Date().getDay()];
+            if(day == 'Friday') {
+                document.write(`it's friday`);
+            }
+        </script>
+    </p>
     <script src="https://cdn.jsdelivr.net/npm/video.js@8.3.0/dist/video.min.js" data-fallback="js/video.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" data-fallback="js/jquery-3.7.0.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js" data-fallback="js/datatables.min.js"></script>
